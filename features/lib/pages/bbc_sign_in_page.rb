@@ -7,6 +7,7 @@ class BBCSignInPage
   attr_accessor :password_short_error
   attr_accessor :missing_error
   attr_accessor :not_match_error
+  attr_accessor :only_letter_password_error
 
   # Page objects
   EMAIL_FIELD_ID = 'user-identifier-input'.freeze
@@ -21,6 +22,7 @@ class BBCSignInPage
     @password_short_error = 'Sorry, that password is too short. It needs to be eight characters or more.'
     @missing_error = "Something's missing. Please check and try again."
     @not_match_error = "Sorry, those details don't match. Check you've typed them correctly."
+    @only_letter_password_error = "Sorry, that password isn't valid. Please include something that isn't a letter."
   end
 
   def fill_in_email_field(email)
