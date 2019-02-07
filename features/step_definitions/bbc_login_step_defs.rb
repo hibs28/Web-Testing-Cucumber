@@ -1,11 +1,10 @@
 Given("I access the bbc login page") do
   @bbc_site = BBCSite.new
   @bbc_site.bbc_homepage.visit_homepage
-  sleep 5
+  @bbc_site.bbc_homepage.click_login_button
 end
 
 Given("I input incorrect username details") do
-  @bbc_site.bbc_homepage.click_login_button
   @bbc_site.sign_in_page.fill_in_email_field('apple1997@banana.com')
 end
 
@@ -27,4 +26,17 @@ end
 
 Then("I receive an error for password being too short") do
   expect(@bbc_site.sign_in_page.error_password_message_box).to eql @bbc_site.sign_in_page.password_short_error
+end
+
+Then("I receive an error for missing email") do
+  expect(@bbc_site.sign_in_page.error_account_message_box).to eql @bbc_site.sign_in_page.missing_error
+end
+
+Then("I receive an error for missing password") do
+  expect(@bbc_site.sign_in_page.error_password_message_box).to eql @bbc_site.sign_in_page.missing_error
+end
+
+Then("I receive an error for not correct details") do
+  expect(@bbc_site.sign_in_page.error_general_message).to eql @bbc_site.sign_in_page.not_match_error
+
 end

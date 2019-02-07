@@ -13,3 +13,10 @@ Feature: BBC LOGIN
     And I input short password details
     When I try to login
     Then I receive an error for password being too short
+
+  Scenario: Selecting sumbit when username and password are empty shows an error
+    Given I access the bbc login page
+    When I try to login
+    Then I receive an error for missing email
+    And I receive an error for missing password
+    And I receive an error for not correct details
