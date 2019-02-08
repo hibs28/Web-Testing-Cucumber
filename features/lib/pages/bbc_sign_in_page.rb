@@ -8,6 +8,8 @@ class BBCSignInPage
   attr_accessor :missing_error
   attr_accessor :not_match_error
   attr_accessor :only_letter_password_error
+  attr_accessor :only_number_password_error
+  attr_accessor :quote_password_error
 
   # Page objects
   EMAIL_FIELD_ID = 'user-identifier-input'.freeze
@@ -23,6 +25,8 @@ class BBCSignInPage
     @missing_error = "Something's missing. Please check and try again."
     @not_match_error = "Sorry, those details don't match. Check you've typed them correctly."
     @only_letter_password_error = "Sorry, that password isn't valid. Please include something that isn't a letter."
+    @only_number_password_error = "Sorry, that password isn't valid. Please include a letter."
+    @quote_password_error = "Sorry, that password isn't valid. Passwords can't include quote marks."
   end
 
   def fill_in_email_field(email)
