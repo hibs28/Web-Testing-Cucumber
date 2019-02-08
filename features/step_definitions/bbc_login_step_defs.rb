@@ -57,9 +57,10 @@ Then("I receive an error for not correct details") do
 end
 
 Given("I input a password that contains a quote") do
-  @bbc_site.sign_in_page.fill_in_password_field('applteree12')
+  @bbc_site.sign_in_page.fill_in_password_field("applteree'12")
 end
 
 Then("I receive an error for password having quotes") do
   expect(@bbc_site.sign_in_page.error_password_message_box).to eql @bbc_site.sign_in_page.quote_password_error
+  sleep 10
 end

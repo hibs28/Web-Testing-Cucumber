@@ -28,14 +28,12 @@ Feature: BBC LOGIN
     When I try to login
     Then I receive an error for password being only numbers
 
-  Scenario: Inputting incorrect username and only numbers password shows an error
+  Scenario: Inputting incorrect username and a password with quotes shows an error
     Given I access the bbc login page
     And I input incorrect username details
     And I input a password that contains a quote
     When I try to login
     Then I receive an error for password having quotes
-    And I receive an error for not correct details
-
 
   Scenario: Selecting sumbit when username and password are empty shows an error
     Given I access the bbc login page
