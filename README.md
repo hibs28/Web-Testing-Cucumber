@@ -1,7 +1,7 @@
 # Web-Testing-Cucumber
 
 ## Description 
-This project 
+This project is a introduction to cucumber in User Interface (UI) testing, which is a tool that uses BDD (Behaiviour Driven Development). For this project I created possible scenarios that a user may do to login to the BBC Webpage and created automated tests to perform those scenarios.
 
 ## Gems Required
 * Capybara
