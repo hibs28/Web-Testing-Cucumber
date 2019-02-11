@@ -1,5 +1,11 @@
 Before do 
-  # p 'We are setting the users objects -------'
   @users = ['Dave', 'Gill', 'Jon']
-  # p '----------------------------'
+end
+
+After do 
+  # p 'Im after hook and I have run'
+end
+
+Before('@test2') do
+  p 'this is specific output for test 2'
 end
